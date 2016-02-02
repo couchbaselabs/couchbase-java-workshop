@@ -27,7 +27,49 @@ If needed, clone the application from the [try-cb-java](https://www.github.com/c
 git clone https://github.com/couchbaselabs/try-cb-java
 ```
 
-Although not required, IntelliJ IDEA will prove to be very helpful throughout the course of this workshop.  
+Although not required, IntelliJ IDEA will prove to be very helpful throughout the course of this workshop.
+
+### Creating a Couchbase Cluster with Docker
+
+Before jumping into the code, a Couchbase Server node or cluster is required.  Docker is a great way to set up Couchbase since an official image exists for it.
+
+From the Docker Terminal, execute the following to spin up the first Docker container:
+
+```
+docker run -d -p 1337:8091 couchbase
+```
+
+The above will deploy a Couchbase container that will be accessible via the host computer on port **1337**.  A second container can be deployed by executing the following:
+
+```
+docker run -d -p 1338:8091 couchbase
+```
+
+Notice how the host port changed.  This is to avoid conflicts as the Docker container shares the same IP address.  To find the Docker IP address, execute the following from the Docker Terminal:
+
+```
+docker-machine ip default
+```
+
+With this IP address you can access both nodes from a web browser at **http://<ip>:1337** and **http://<ip>:1338**.  Starting with the container on port **1337**, treat it as a new cluster node.  Give it a password you can remember and make sure to install the **travel-sample** bucket.
+
+When the first container is complete, visit the second found on port **1338**.  This node will join a cluster rather than creating a new one, however, the IP used in the web browser is not the IP that should be used for two containers to communicate with each other.  Instead execute the following from the Docker Terminal:
+
+```
+docker network ls
+```
+
+This will get various information about the network.  Take note of the network id for the bridge as it will be used here:
+
+```
+docker network inspect <network_id_here> | grep IPv4Address
+```
+
+Two IP addresses should be returned.  Since this is the second container deployed, note the IP with the largest final IP octet.  This is the IP address to enter in the Couchbase configuration.
+
+With the two nodes joined in the same cluster, the cluster must be re-balanced.  This could take some time as Docker is running locally via Virtual Box.
+
+When the re-balance has completed, the server is ready for use.
 
 ### Using IntelliJ
 
