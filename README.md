@@ -39,11 +39,15 @@ From the Docker Terminal, execute the following to spin up the first Docker cont
 docker run -d -p 1337:8091 couchbase
 ```
 
+![Getting Started 9](images/getting-started-9.png)
+
 The above will deploy a Couchbase container that will be accessible via the host computer on port **1337**.  A second container can be deployed by executing the following:
 
 ```
 docker run -d -p 1338:8091 couchbase
 ```
+
+![Getting Started 10](images/getting-started-10.png)
 
 Notice how the host port changed.  This is to avoid conflicts as the Docker container shares the same IP address.  To find the Docker IP address, execute the following from the Docker Terminal:
 
@@ -51,13 +55,27 @@ Notice how the host port changed.  This is to avoid conflicts as the Docker cont
 docker-machine ip default
 ```
 
-With this IP address you can access both nodes from a web browser at **http://<ip>:1337** and **http://<ip>:1338**.  Starting with the container on port **1337**, treat it as a new cluster node.  Give it a password you can remember and make sure to install the **travel-sample** bucket.
+![Getting Started 11](images/getting-started-11.png)
 
-When the first container is complete, visit the second found on port **1338**.  This node will join a cluster rather than creating a new one, however, the IP used in the web browser is not the IP that should be used for two containers to communicate with each other.  Instead execute the following from the Docker Terminal:
+With this IP address you can access both nodes from a web browser at **http://<ip>:1337** and **http://<ip>:1338**.  Starting with the container on port **1337**, treat it as a new cluster node.  Give it a password you can remember.
+
+![Getting Started 14](images/getting-started-14.png)
+
+Then make sure to install the **travel-sample** bucket.
+
+![Getting Started 15](images/getting-started-15.png)
+
+When the first container is complete, visit the second found on port **1338**.  
+
+![Getting Started 16](images/getting-started-16.png)
+
+This node will join a cluster rather than creating a new one, however, the IP used in the web browser is not the IP that should be used for two containers to communicate with each other.  Instead execute the following from the Docker Terminal:
 
 ```
 docker network ls
 ```
+
+![Getting Started 12](images/getting-started-12.png)
 
 This will get various information about the network.  Take note of the network id for the bridge as it will be used here:
 
@@ -66,6 +84,8 @@ docker network inspect <network_id_here> | grep IPv4Address
 ```
 
 Two IP addresses should be returned.  Since this is the second container deployed, note the IP with the largest final IP octet.  This is the IP address to enter in the Couchbase configuration.
+
+![Getting Started 13](images/getting-started-13.png)
 
 With the two nodes joined in the same cluster, the cluster must be re-balanced.  This could take some time as Docker is running locally via Virtual Box.
 
