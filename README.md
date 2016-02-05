@@ -1,12 +1,12 @@
 # Couchbase Java Workshop
 
-In this workshop you'll learn how to use the Couchbase Java SDK and AngularJS to create a full stack web application that can perform CRUD operations via an API.
+In this workshop you'll learn how to create a full stack Java web application with a CRUD API using AngularJS and Couchbase Server.
 
 This document will help you through the process for building such an application.
 
 ## What's Included
 
-This tutorial is based on a demo application, [try-cb-java](https://www.github.com/couchbaselabs/try-cb-java), designed to show the features of the Couchbase Java SDK.
+This tutorial is based on a demo application, [try-cb-java](https://www.github.com/couchbaselabs/try-cb-java), designed to show the features of the Couchbase Java SDK in the form of a simple travel example similar to popular booking websites like Expedia and Amadeus.
 
 You may be viewing this tutorial from your web browser via GitHub or on your local file system after cloning the repository.  Whatever the scenario, you should see the following files and directories:
 
@@ -15,17 +15,36 @@ initial/
 finished/
 images/
 README.md
+Couchbase Java Workshop.pptx
 ```
+
+The `initial` directory contains the starting point for our workshop.  It is an incomplete version of the final result that we'll fill in throughout this document.  The `finished` directory contains the final result that we are trying to accomplish.  It can also be used to help get you through the workshop if you get stuck.
+
+The `images` directory contains screenshots of various steps used in this `README.md` tutorial document.  Finally if you'd like to see some educational slides you can view the `Couchbase Java Workshop.pptx` PowerPoint slide deck.
+
+## The Requirements
+
+There are a few requirements necessary before being able complete this workshop:
+
+1. The Java Development Kit (JDK) 1.7 or newer must be installed.
+2. Maven 3.0 or newer must be installed.
+
+## Agenda
+
+1. Getting Started
+    1. Creating a Couchbase Cluster with Docker
+    2. Using the Command Line to Build and Run
+    3. Using IntelliJ IDEA to Build and Run
+    4. A Note About the Workshop
+2. STEP 1: Connect to a Couchbase Cluster and Open a Bucket
+3. STEP 2: Standard NoSQL CRUD Operations
+4. STEP 3: Reactive Programming with RxJava and the Couchbase Java SDK
+5. STEP 4: SQL-like Queries with Couchbase N1QL
+6. STEP 5: Creating API Endpoints
 
 ## Getting Started
 
 In the getting started, you will get the project set up locally, verify it by running the `finished` project, then switch to the `initial` project to follow the steps which will have you learn the Couchbase Java SDK basics.
-
-If needed, clone the application from the [try-cb-java](https://www.github.com/couchbaselabs/try-cb-java) repository:
-
-```
-git clone https://github.com/couchbaselabs/try-cb-java
-```
 
 Although not required, IntelliJ IDEA will prove to be very helpful throughout the course of this workshop.
 
@@ -91,6 +110,18 @@ With the two nodes joined in the same cluster, the cluster must be re-balanced. 
 
 When the re-balance has completed, the server is ready for use.
 
+### Using the Command Line
+
+If you don't want to use IntelliJ you can launch the project from your Command Prompt (Windows) or Terminal (Mac and Linux).  You are required to have Maven installed and configured to make this possible.
+
+With the `finished` project as your current working directory, execute the following:
+
+```
+mvn spring-boot:run
+```
+
+The project is now running and can be viewed via a web browser at [http://localhost:8080](http://localhost:8080).
+
 ### Using IntelliJ
 
 Using IntelliJ, choose **Import Project** from the prompt, or **File -> New -> Project from Existing Sources** from the menu.
@@ -128,18 +159,6 @@ You'll want to give it a good name, to represent that it is a configuration for 
 ![Getting Started 8](images/getting-started-8.png)
 
 The project can now be run by clicking **Run -> Run 'spring-boot:run'** from the menu.
-
-The project is now running and can be viewed via a web browser at [http://localhost:8080](http://localhost:8080).
-
-### Using the Command Line
-
-If you don't want to use IntelliJ you can launch the project from your Command Prompt (Windows) or Terminal (Mac and Linux).  You are required to have Maven installed and configured to make this possible.
-
-With the `finished` project as your current working directory, execute the following:
-
-```
-mvn spring-boot:run
-```
 
 The project is now running and can be viewed via a web browser at [http://localhost:8080](http://localhost:8080).
 
