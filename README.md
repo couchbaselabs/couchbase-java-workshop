@@ -29,13 +29,16 @@ There are a few requirements necessary before being able complete this workshop:
 1. The Java Development Kit (JDK) 1.7 or newer must be installed.
 2. Maven 3.0 or newer must be installed.
 
+Tools that would prove useful for this workshop, but are not required, is the Docker Toolbox and IntelliJ IDEA.
+
 ## Agenda
 
 1. Getting Started
-    1. Creating a Couchbase Cluster with Docker
-    2. Using the Command Line to Build and Run
-    3. Using IntelliJ IDEA to Build and Run
-    4. A Note About the Workshop
+    1. Using a Native Installation of Couchbase Server
+    2. Creating a Couchbase Cluster with Docker
+    3. Using the Command Line to Build and Run
+    4. Using IntelliJ IDEA to Build and Run
+    5. A Note About the Workshop
 2. STEP 1: Connect to a Couchbase Cluster and Open a Bucket
 3. STEP 2: Standard NoSQL CRUD Operations
 4. STEP 3: Reactive Programming with RxJava and the Couchbase Java SDK
@@ -46,11 +49,21 @@ There are a few requirements necessary before being able complete this workshop:
 
 In the getting started, you will get the project set up locally, verify it by running the `finished` project, then switch to the `initial` project to follow the steps which will have you learn the Couchbase Java SDK basics.
 
+We are starting with the `finished` project because the `initial` project has holes in it that will prevent it from running before completing the workshop.  By running `finished` we can prove that our environment is correct and ready to use.
+
 Although not required, IntelliJ IDEA will prove to be very helpful throughout the course of this workshop.
+
+### Using a Native Installation of Couchbase Server
+
+Before jumping into the code, a Couchbase Server node or cluster is required.  If you're on a Mac or Windows computer you can easily use the Docker Toolbox for this, but in all operating system scenarios (Mac, Windows, Linux) you can always download and install Couchbase Server natively.
+
+Binaries for all three platforms can be found at the following URL:
+
+[http://www.couchbase.com/nosql-databases/downloads](http://www.couchbase.com/nosql-databases/downloads)
 
 ### Creating a Couchbase Cluster with Docker
 
-Before jumping into the code, a Couchbase Server node or cluster is required.  Docker is a great way to set up Couchbase since an official image exists for it.
+Docker is a great way to set up Couchbase since an official image exists for it.  Using the Docker Toolbox on Mac and Windows is a quick and easy solution for getting a cluster running locally.  On Linux Docker becomes a bit more complicated which is why the native installation may best suite your needs rather than Docker.
 
 From the Docker Terminal, execute the following to spin up the first Docker container:
 
@@ -76,7 +89,7 @@ docker-machine ip default
 
 ![Getting Started 11](images/getting-started-11.png)
 
-With this IP address you can access both nodes from a web browser at **http://<ip>:1337** and **http://<ip>:1338**.  Starting with the container on port **1337**, treat it as a new cluster node.  Give it a password you can remember.
+With this IP address you can access both nodes from a web browser at **http://ip:1337** and **http://ip:1338**.  Starting with the container on port **1337**, treat it as a new cluster node.  Give it a password you can remember.
 
 ![Getting Started 14](images/getting-started-14.png)
 
@@ -110,7 +123,7 @@ With the two nodes joined in the same cluster, the cluster must be re-balanced. 
 
 When the re-balance has completed, the server is ready for use.
 
-### Using the Command Line
+### Using the Command Line to Build and Run
 
 If you don't want to use IntelliJ you can launch the project from your Command Prompt (Windows) or Terminal (Mac and Linux).  You are required to have Maven installed and configured to make this possible.
 
@@ -122,7 +135,7 @@ mvn spring-boot:run
 
 The project is now running and can be viewed via a web browser at [http://localhost:8080](http://localhost:8080).
 
-### Using IntelliJ
+### Using IntelliJ IDEA to Build and Run
 
 Using IntelliJ, choose **Import Project** from the prompt, or **File -> New -> Project from Existing Sources** from the menu.
 
