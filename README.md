@@ -29,7 +29,7 @@ There are a few requirements necessary before being able complete this workshop:
 1. The Java Development Kit (JDK) 1.7 or newer must be installed.
 2. Maven 3.0 or newer must be installed.
 
-Tools that would prove useful for this workshop, but are not required, is the Docker Toolbox and IntelliJ IDEA.
+Tools that would prove useful for this workshop, but are not required, is the [Docker Toolbox](https://www.docker.com/products/docker-toolbox) and [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
 
 ## Agenda
 
@@ -73,7 +73,7 @@ At this point the database is ready to be used within our application.  If you p
 
 ### Creating a Couchbase Cluster with Docker
 
-Docker is a great way to set up Couchbase since an official image exists for it.  Using the Docker Toolbox on Mac and Windows is a quick and easy solution for getting a cluster running locally.  On Linux Docker becomes a bit more complicated which is why the native installation may best suite your needs rather than Docker.
+Docker is a great way to set up Couchbase since an official image exists for it.  Using the [Docker Toolbox](https://www.docker.com/products/docker-toolbox) on Mac and Windows is a quick and easy solution for getting a cluster running locally.  On Linux Docker becomes a bit more complicated which is why the native installation may best suite your needs rather than Docker.
 
 From the Docker Terminal, execute the following to spin up the first Docker container:
 
@@ -147,7 +147,7 @@ The project is now running and can be viewed via a web browser at [http://localh
 
 ### Using IntelliJ IDEA to Build and Run
 
-Using IntelliJ, choose **Import Project** from the prompt, or **File -> New -> Project from Existing Sources** from the menu.
+Using [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), choose **Import Project** from the prompt, or **File -> New -> Project from Existing Sources** from the menu.
 
 ![Getting Started 1](images/getting-started-1.png)
 
@@ -336,3 +336,15 @@ JsonObject jsonData = JsonObject.fromJson(String json);
 To get properties of the `JsonObject` you can perform operations like `getString` or `getArray`, but not limited to just the two.  Use this knowledge to complete the **POST** endpoints in the **UserController.java** file.
 
 The endpoints in the **FlightPathController.java** and **AirportController.java** files are no different than what we just saw.  See if you can complete them without looking at the `finished` copy.
+
+## Resources
+
+Couchbase - [http://www.couchbase.com](http://www.couchbase.com)
+
+IntelliJ IDEA - [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
+
+Docker Toolbox - [https://www.docker.com/products/docker-toolbox](https://www.docker.com/products/docker-toolbox)
+
+Maven - [https://maven.apache.org](https://maven.apache.org)
+
+Java Development Kit - [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
