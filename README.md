@@ -61,6 +61,16 @@ Binaries for all three platforms can be found at the following URL:
 
 [http://www.couchbase.com/nosql-databases/downloads](http://www.couchbase.com/nosql-databases/downloads)
 
+With Couchbase Server installed and running on your local machine navigate to **http://localhost:8091** in your web browser and start a new cluster.
+
+![Getting Started 14](images/getting-started-14.png)
+
+After declaring a username and password and resource allocations, make sure to include the **travel-sample** bucket as it will be the basis around this workshop.
+
+![Getting Started 15](images/getting-started-15.png)
+
+At this point the database is ready to be used within our application.  If you plan to use the native installation, the following instructions on Docker can be skipped.
+
 ### Creating a Couchbase Cluster with Docker
 
 Docker is a great way to set up Couchbase since an official image exists for it.  Using the Docker Toolbox on Mac and Windows is a quick and easy solution for getting a cluster running locally.  On Linux Docker becomes a bit more complicated which is why the native installation may best suite your needs rather than Docker.
