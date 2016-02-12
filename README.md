@@ -29,7 +29,7 @@ There are a few requirements necessary before being able complete this workshop:
 1. The Java Development Kit (JDK) 1.7 or newer must be installed.
 2. Maven 3.0 or newer must be installed.
 
-Tools that would prove useful for this workshop, but are not required, is the [Docker Toolbox](https://www.docker.com/products/docker-toolbox) and [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
+Tools that would prove useful for this workshop, but are not required, is the [Docker Toolbox](https://www.docker.com/products/docker-toolbox) and [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).  Instead of Docker you can use [Ansible](https://github.com/couchbaselabs/ansible-couchbase-server) or the Couchbase Server binary distribution.
 
 ## Agenda
 
