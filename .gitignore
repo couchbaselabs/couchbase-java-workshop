@@ -4,3 +4,5 @@ Thumbs.db*
 
 initial/target
 finished/target
+*.iml
+.idea/

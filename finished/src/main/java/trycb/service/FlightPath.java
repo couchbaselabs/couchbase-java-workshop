@@ -1,10 +1,8 @@
 package trycb.service;
 
 import com.couchbase.client.java.Bucket;
-import com.couchbase.client.java.query.N1qlQuery;
-import com.couchbase.client.java.query.N1qlQueryResult;
-import com.couchbase.client.java.query.N1qlQueryRow;
-import com.couchbase.client.java.query.Statement;
+import com.couchbase.client.java.document.json.JsonArray;
+import com.couchbase.client.java.query.*;
 import com.couchbase.client.java.query.dsl.Sort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
